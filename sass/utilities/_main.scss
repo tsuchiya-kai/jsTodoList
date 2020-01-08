@@ -1,0 +1,46 @@
+// 背景色
+._bg-blue {
+    background-color: #61cbff;
+}
+
+._bg-green {
+    background-color: $color-bg-green;
+}
+
+._bg-yellow {
+    background-color: $color-bg-yellow;
+}
+
+._bg-ash {
+    background-color: #F5F5F5;
+}
+
+// margin
+@for $i from 1 through 20 {
+    ._mb-#{$i} {
+      margin-bottom:#{$i}rem!important;
+  }
+}
+
+@for $i from 1 through 20 {
+    ._pl-#{$i} {
+        padding-left: #{$i}rem !important;
+    }
+}
+
+@for $i from 1 through 20 {
+    ._pr-#{$i} {
+        padding-right: #{$i}rem !important;
+    }
+}
+@for $i from 1 through 20 {
+    ._pt-#{$i} {
+        padding-top: #{$i}rem !important;
+    }
+}
+
+@for $i from 1 through 20 {
+    ._pb-#{$i} {
+        padding-bottom: #{$i}rem !important;
+    }
+}

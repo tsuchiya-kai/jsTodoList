@@ -1,0 +1,30 @@
+{
+  "name": "jstodolist",
+  "version": "1.0.0",
+  "description": "学習のため、javascriptで作ったTodoリスト",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node-sass --include-path scss sass/style.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsuchiya-kai/jsTodoList.git"
+  },
+  "author": "Tsuchiya Kaita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsuchiya-kai/jsTodoList/issues"
+  },
+  "homepage": "https://github.com/tsuchiya-kai/jsTodoList#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
+
+
