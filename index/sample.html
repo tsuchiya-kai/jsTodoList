@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JavaScriptTODOリスト</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -13,7 +14,7 @@
 
   <div class="todo-list">
     <h1 class="title">TODOリスト</h1>
-    <form action="" class="add-form">
+    <form action="" class="add-task _mb-3">
       <div class="inputwrap">
         <div class="input">
           <input type="text" class="app-input" placeholder="タスクを入力してください！">
@@ -23,6 +24,24 @@
         </div>
       </div>
     </form>
+
+    <h2 class="subtitle">タスク一覧</h2>
+    <div class="center-container task-area">
+      <div class="task-card">
+
+        <div class="checkbox">
+          <input class="input" id="taskcheck" type="checkbox" onchange="clickedRadioBtn()">
+          <label class="label" for="taskcheck" checked></label>
+        </div>
+
+        <div class="title">勉強する</div>
+
+        <i class="delete"></i>
+
+
+      </div>
+    </div>
+
   </div>
   </div>
 
