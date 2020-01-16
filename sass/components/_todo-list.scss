@@ -3,11 +3,14 @@
   >.title {
     font-size: 5rem;
     text-align: center;
+
+    @include respond(phone) {
+      font-size: 4rem;
+    }
   }
 
   >.subtitle {
     font-size: 3rem;
-    text-align: center;
     text-align: center;
   }
 }

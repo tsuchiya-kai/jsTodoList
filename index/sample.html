@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="center-container _bg-blue">
+<div class="todolist-wrap _center-content _bg-blue">
 
   <div class="todo-list">
     <h1 class="title">TODOリスト</h1>
@@ -26,7 +26,28 @@
     </form>
 
     <h2 class="subtitle">タスク一覧</h2>
-    <div class="center-container task-area">
+    
+    <div class="task-area">
+
+      <form class="task-filter _mb-2">
+        <div class="wrap _center-content">
+          <label class="label">
+            <input class="input" type="radio" name="todos" value="all-todos" onchange="clickedRadioBtn()" checked>
+            <span class="text">全て表示</span>
+          </label>
+  
+          <label class="label">
+            <input class="input" type="radio" name="todos" value="Incomplete" onchange="clickedRadioBtn()">
+            <span class="text">未完了</span>
+          </label>
+  
+          <label class="label">
+            <input class="input" type="radio" name="todos" value="Complete" onchange="clickedRadioBtn()">
+            <span class="text">完了済</span>
+          </label>
+        </div>
+      </form>
+
       <div class="task-card">
 
         <div class="checkbox">
@@ -36,14 +57,13 @@
 
         <div class="title">勉強する</div>
 
-        <i class="delete"></i>
-
+        <a href="#" class="delete">削除</a>
 
       </div>
     </div>
 
   </div>
-  </div>
+</div>
 
 
 

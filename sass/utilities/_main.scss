@@ -44,3 +44,11 @@
         padding-bottom: #{$i}rem !important;
     }
 }
+
+//中央寄せ
+._center-content {
+    margin: 0 auto;
+}
+._center-container {
+    text-align: center;
+}

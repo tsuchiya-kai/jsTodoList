@@ -1,0 +1,85 @@
+.task-card {
+  display: flex;
+  background-color: #b1e5ff;
+  min-height: 10rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 7rem;
+  padding-left: 2rem;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+
+  > .checkbox {
+    text-align: center;
+
+    > .input {
+      display: none;
+
+      &:checked + :after {
+        content: '済';
+        position: absolute;
+        top: -.8rem;
+        left: -.1rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1.1;
+        color: #fc7ea4;
+        border: 2px solid #fc7ea4;
+        border-radius: 100px;
+        width: 3.2rem;
+        height: 3.2rem;
+
+      }
+    }
+
+    > label {
+      position: relative;
+      padding-left: 3rem;
+      cursor: pointer;
+      user-select: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid #ccc;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+      }
+    }
+  }
+
+  >.title {
+    font-size: 2rem;
+    margin-left: 1.5rem;
+  }
+
+  >.delete  {
+    color: #fff;
+    background-color: #fc5555;
+    text-decoration: none;
+    line-height: 1;
+    font-weight: bold;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    transition: .3s;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    &:hover {
+      background-color: #f83030;
+    }
+  }
+}
