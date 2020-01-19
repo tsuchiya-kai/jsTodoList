@@ -5,38 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JavaScriptTODOリスト</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="_bg-blue">
+
+<div class="todolist-wrap _center-content">
+
+  <div class="todo-list">
+    <h1 class="title">TODOリスト</h1>
+    <form action="" class="add-task _mb-3">
+      <div class="inputwrap">
+        <div class="input">
+          <input type="text" class="app-input" id ="input-form" placeholder="タスクを入力してください！">
+        </div>
+        <div class="submit" id="submit-btn"> 
+          <input type="submit" class="app-btn" value="追加">
+        </div>
+      </div>
+    </form>
+
+    <h2 class="subtitle">タスク一覧</h2>
+    
+    <div class="task-area">
+
+      <form class="task-filter _mb-2">
+        <div class="wrap _center-content">
+          <label class="label">
+            <input class="radio" type="radio" name="todos" value="all-todos" onchange="allTasks()" checked>
+            <span class="text">全て表示</span>
+          </label>
   
+          <label class="label">
+            <input class="radio" type="radio" name="todos" value="Incomplete" onchange="incompleteTasks()">
+            <span class="text">未完了</span>
+          </label>
+  
+          <label class="label">
+            <input class="radio" type="radio" name="todos" value="Complete" onchange="completeTasks()">
+            <span class="text">完了済</span>
+          </label>
+        </div>
+      </form>
 
+      <ul class="displayplace" id="displayplace">
+        
+        <li class="task-card">
+          <div class="checkbox">
+            <label class="label">
+              <input class="input" type="checkbox">
+              <span class="span">済</span>
+            </label>
+          </div>
+          <div class="title">例：勉強をする</div>
+          <a class="delete">削除</a>
+        </li>
 
+      </ul>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="../js/main.js"></script>
+    </div>
+  </div>
+</div>
+<script src="../js/todo.js"></script>
 </body>
 </html>

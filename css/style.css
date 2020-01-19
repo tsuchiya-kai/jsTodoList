@@ -228,8 +228,8 @@ body {
     .todolist-wrap {
       padding-top: 2rem;
       padding-bottom: 5rem;
-      padding-right: 3rem;
-      padding-left: 3rem; } }
+      padding-right: 1rem;
+      padding-left: 1rem; } }
 
 .todo-list > .title {
   font-size: 5rem;
@@ -255,21 +255,6 @@ body {
   position: relative; }
   .task-card > .checkbox {
     text-align: center; }
-    .task-card > .checkbox > .input {
-      display: none; }
-      .task-card > .checkbox > .input:checked + :after {
-        content: '済';
-        position: absolute;
-        top: -.8rem;
-        left: -.1rem;
-        font-size: 2.5rem;
-        font-weight: bold;
-        line-height: 1.1;
-        color: #fc7ea4;
-        border: 2px solid #fc7ea4;
-        border-radius: 100px;
-        width: 3.2rem;
-        height: 3.2rem; }
     .task-card > .checkbox > label {
       position: relative;
       padding-left: 3rem;
@@ -289,6 +274,23 @@ body {
         background-color: #fff;
         border-radius: 4px;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); }
+      .task-card > .checkbox > label > .input {
+        display: none; }
+        .task-card > .checkbox > label > .input:checked + .span {
+          display: block;
+          position: absolute;
+          top: -.8rem;
+          left: -.1rem;
+          font-size: 2.5rem;
+          font-weight: bold;
+          line-height: 1.1;
+          color: #fc7ea4;
+          border: 2px solid #fc7ea4;
+          border-radius: 100px;
+          width: 3.2rem;
+          height: 3.2rem; }
+      .task-card > .checkbox > label .span {
+        display: none; }
   .task-card > .title {
     font-size: 2rem;
     margin-left: 1.5rem; }
@@ -306,53 +308,60 @@ body {
     transition: .3s;
     position: absolute;
     top: 2rem;
-    right: 2rem; }
+    right: 2rem;
+    cursor: pointer; }
     .task-card > .delete:hover {
       background-color: #f83030; }
 
-.task-filter > .wrap {
-  font-size: 1.8rem;
-  max-width: 45rem;
-  padding-right: 5rem;
-  padding-left: 5rem;
-  display: flex;
-  justify-content: space-between; }
-  .task-filter > .wrap > .label {
-    position: relative;
+.task-filter {
+  user-select: none; }
+  .task-filter > .wrap {
+    font-size: 1.8rem;
+    max-width: 45rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
     display: flex;
-    align-items: center; }
-    .task-filter > .wrap > .label::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      width: 2rem;
-      height: 2rem;
-      border: 2px solid #ccc;
-      background-color: #fff;
-      border-radius: 4px;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); }
-    .task-filter > .wrap > .label > .text {
-      padding-left: 3rem; }
-    .task-filter > .wrap > .label > .input {
-      display: none; }
-      .task-filter > .wrap > .label > .input:checked + .text {
-        font-weight: bold; }
-      .task-filter > .wrap > .label > .input:checked + :after {
-        content: '\2713\0020';
+    justify-content: space-between; }
+    @media only screen and (max-width: 37.5em) {
+      .task-filter > .wrap {
+        padding-right: 1rem;
+        padding-left: 1rem; } }
+    .task-filter > .wrap > .label {
+      position: relative;
+      display: flex;
+      align-items: center; }
+      .task-filter > .wrap > .label::before {
+        content: '';
         position: absolute;
+        left: 0;
         top: 0;
         bottom: 0;
-        left: 0;
         margin: auto;
         width: 2rem;
         height: 2rem;
-        font-size: 2.5rem;
-        font-weight: bold;
-        line-height: 0.8;
-        color: #f83030; }
+        border: 2px solid #ccc;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); }
+      .task-filter > .wrap > .label > .text {
+        padding-left: 3rem; }
+      .task-filter > .wrap > .label > .radio {
+        display: none; }
+        .task-filter > .wrap > .label > .radio:checked + .text {
+          font-weight: bold; }
+        .task-filter > .wrap > .label > .radio:checked + :after {
+          content: '\2713\0020';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          width: 2rem;
+          height: 2rem;
+          font-size: 2.5rem;
+          font-weight: bold;
+          line-height: 0.8;
+          color: #f83030; }
 
 .task-area {
   padding-top: 1rem;

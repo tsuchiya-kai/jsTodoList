@@ -17,9 +17,9 @@
     <form action="" class="add-task _mb-3">
       <div class="inputwrap">
         <div class="input">
-          <input type="text" class="app-input" placeholder="タスクを入力してください！">
+          <input type="text" class="app-input" id ="input-form" placeholder="タスクを入力してください！">
         </div>
-        <div class="submit">
+        <div class="submit" id="submit-btn"> 
           <input type="submit" class="app-btn" value="追加">
         </div>
       </div>
@@ -32,34 +32,37 @@
       <form class="task-filter _mb-2">
         <div class="wrap _center-content">
           <label class="label">
-            <input class="input" type="radio" name="todos" value="all-todos" onchange="clickedRadioBtn()" checked>
+            <input class="radio" type="radio" name="todos" value="all-todos" onchange="allTasks()" checked>
             <span class="text">全て表示</span>
           </label>
   
           <label class="label">
-            <input class="input" type="radio" name="todos" value="Incomplete" onchange="clickedRadioBtn()">
+            <input class="radio" type="radio" name="todos" value="Incomplete" onchange="incompleteTasks()">
             <span class="text">未完了</span>
           </label>
   
           <label class="label">
-            <input class="input" type="radio" name="todos" value="Complete" onchange="clickedRadioBtn()">
+            <input class="radio" type="radio" name="todos" value="Complete" onchange="completeTasks()">
             <span class="text">完了済</span>
           </label>
         </div>
       </form>
 
-      <div class="task-card">
+      <ul class="displayplace" id="displayplace">
+        
+        <li class="task-card">
+          <div class="checkbox">
+            <label class="label">
+              <input class="input" type="checkbox">
+              <span class="span">済</span>
+            </label>
+          </div>
+          <div class="title">例：勉強をする</div>
+          <a class="delete">削除</a>
+        </li>
 
-        <div class="checkbox">
-          <input class="input" id="taskcheck" type="checkbox" onchange="clickedRadioBtn()">
-          <label class="label" for="taskcheck" checked></label>
-        </div>
+      </ul>
 
-        <div class="title">勉強する</div>
-
-        <a href="#" class="delete">削除</a>
-
-      </div>
     </div>
 
   </div>
@@ -92,6 +95,6 @@
 
 
 
-  <script src="../js/main.js"></script>
+  <script src="../js/todo.js"></script>
 </body>
 </html>

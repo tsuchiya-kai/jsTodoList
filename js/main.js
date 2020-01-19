@@ -1,19 +1,16 @@
 'use strict';
 
 //追加ボタン
-const submitBtn = document.getElementById('task-submit');
+const submitBtn = document.getElementById('submit-btn');
 
 //input
-const inputForm = document.getElementById('task-input');
+const inputForm = document.getElementById('input-form');
 
 //リストを表示する場所
-let tasksSpace = document.querySelector('.p-tasks__list');
+let displayPlace = document.getElementById('.displayplace');
 
 //タスクを入れる配列
 let todoTasks = [];
-
-//バッジ類
-// let BadgeBtns = document.querySelectorAll('.p-tasks__badge');
 
 //ラジオボタン
 let radioBtns = document.querySelector('.c-form__radio-button');

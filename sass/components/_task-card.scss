@@ -13,26 +13,6 @@
   > .checkbox {
     text-align: center;
 
-    > .input {
-      display: none;
-
-      &:checked + :after {
-        content: '済';
-        position: absolute;
-        top: -.8rem;
-        left: -.1rem;
-        font-size: 2.5rem;
-        font-weight: bold;
-        line-height: 1.1;
-        color: #fc7ea4;
-        border: 2px solid #fc7ea4;
-        border-radius: 100px;
-        width: 3.2rem;
-        height: 3.2rem;
-
-      }
-    }
-
     > label {
       position: relative;
       padding-left: 3rem;
@@ -53,6 +33,29 @@
         background-color: #fff;
         border-radius: 4px;
         box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+      }
+      
+      > .input {
+        display: none;
+
+        &:checked + .span {
+          display: block;
+          position: absolute;
+          top: -.8rem;
+          left: -.1rem;
+          font-size: 2.5rem;
+          font-weight: bold;
+          line-height: 1.1;
+          color: #fc7ea4;
+          border: 2px solid #fc7ea4;
+          border-radius: 100px;
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+      }
+
+      .span {
+        display: none;
       }
     }
   }
@@ -77,6 +80,7 @@
     position: absolute;
     top: 2rem;
     right: 2rem;
+    cursor: pointer;
 
     &:hover {
       background-color: #f83030;
