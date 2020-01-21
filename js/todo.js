@@ -2,12 +2,14 @@
 
 //追加ボタン
 const submitBtn = document.getElementById('submit-btn');
+//全タスクチェック
+const  allTaskBtn = document.getElementById('alltask')
 //input
 const inputForm = document.getElementById('input-form');
 //リストを表示する場所
-let displayPlace = document.getElementById('displayplace');
+const displayPlace = document.getElementById('displayplace');
 //タスクを入れる配列
-let todoTasks = [];
+const todoTasks = [];
 
 
 //追加ボタンクリック時
@@ -15,6 +17,9 @@ submitBtn.addEventListener('click',function(event) {
   event.preventDefault();
 
   if(inputForm.value !== '') {
+
+    //全タスク表示に切り替える
+    allTaskBtn.checked = true;
 
     todoTasks.push({taskName: inputForm.value,status: false});
 
@@ -28,31 +33,51 @@ submitBtn.addEventListener('click',function(event) {
 
   todoTasks.forEach( (el) => {
 
-    let li = document.createElement('li');
-    li.className = 'task-card _mb-2';
+    if(el.status === false){
+      
+      let li = document.createElement('li');
 
-    li.innerHTML =`
-      <div class="checkbox">
-        <label class="label">
-          <input class="input" type="checkbox">
-          <span class="span">済</span>
-        </label>
-      </div>
-      <div class="title">${el.taskName}</div>
-      <a class="delete">削除</a>
-    `;
+      li.className = 'task-card _mb-2';
 
-    displayPlace.appendChild(li);
+      li.innerHTML =`
+        <div class="checkbox">
+          <label class="label">
+            <input class="input" type="checkbox">
+            <span class="span">済</span>
+          </label>
+        </div>
+        <div class="title">${el.taskName}</div>
+        <a class="delete">削除</a>
+      `;
+      displayPlace.appendChild(li);
+
+    }else {
+      let li = document.createElement('li');
+
+      li.className = 'task-card _mb-2';
+
+      li.innerHTML =`
+        <div class="checkbox">
+          <label class="label">
+            <input class="input" type="checkbox"checked>
+            <span class="span">済</span>
+          </label>
+        </div>
+        <div class="title">${el.taskName}</div>
+        <a class="delete">削除</a>
+      `;
+      displayPlace.appendChild(li);
+    }
   })
 
 
   //タスク状態管理用チェックボックス
-  let radioBtns = document.querySelectorAll('.checkbox > .label');
+  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
 
   //タスクの状態管理(切り替え)
-  radioBtns.forEach( (e,index) => {
-    e.addEventListener('click',function(){
-      todoTasks[index].status = !status
+  radioBtns.forEach( (el,i) => {
+    el.addEventListener('click',function(){
+      todoTasks[i].status = !todoTasks[i].status
     })
   })
 })
@@ -120,6 +145,17 @@ function allTasks() {
       displayPlace.appendChild(li);
     }
   })
+  
+  //タスク状態管理用チェックボックス
+  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
+
+  //タスクの状態管理(切り替え)
+  radioBtns.forEach( (el,i) => {
+    el.addEventListener('click',function(){
+      todoTasks[i].status = !todoTasks[i].status
+    })
+  })
+
 }
 
 function incompleteTasks() {
@@ -146,6 +182,16 @@ function incompleteTasks() {
 
     displayPlace.appendChild(li);
   })
+
+  //タスク状態管理用チェックボックス
+  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
+
+  //タスクの状態管理(切り替え)
+  radioBtns.forEach( (el,i) => {
+    el.addEventListener('click',function(){
+      todoTasks[i].status = !todoTasks[i].status
+    })
+  })
 }
 
 function completeTasks() {
@@ -171,5 +217,15 @@ function completeTasks() {
     `;
 
     displayPlace.appendChild(li);
+  })
+
+  //タスク状態管理用チェックボックス
+  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
+
+  //タスクの状態管理(切り替え)
+  radioBtns.forEach( (el,i) => {
+    el.addEventListener('click',function(){
+      todoTasks[i].status = !todoTasks[i].status
+    })
   })
 }
