@@ -12,7 +12,21 @@ const displayPlace = document.getElementById('displayplace');
 const todoTasks = [];
 
 
-//追加ボタンクリック時
+//状態切り替え
+function changeStatus ()  {
+  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
+
+  radioBtns.forEach( (el,i) => {
+    el.addEventListener('click',function(){
+      console.log(todoTasks[i].status)
+      console.log(todoTasks[i])
+      todoTasks[i].status = !todoTasks[i].status
+      console.log(todoTasks[i].status)
+    })
+  })
+}
+
+//追加ボタンクリック時に発火
 submitBtn.addEventListener('click',function(event) {
   event.preventDefault();
 
@@ -70,16 +84,9 @@ submitBtn.addEventListener('click',function(event) {
     }
   })
 
+  //状態管理
+  changeStatus();
 
-  //タスク状態管理用チェックボックス
-  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
-
-  //タスクの状態管理(切り替え)
-  radioBtns.forEach( (el,i) => {
-    el.addEventListener('click',function(){
-      todoTasks[i].status = !todoTasks[i].status
-    })
-  })
 })
 
 displayPlace.addEventListener('click',e => {
@@ -104,7 +111,7 @@ displayPlace.addEventListener('click',e => {
 
 
 
-//タスクのフィルター
+//タスクのフィルター、発火はHTMLタグで
 function allTasks() {
   displayPlace.textContent = null;
 
@@ -145,16 +152,9 @@ function allTasks() {
       displayPlace.appendChild(li);
     }
   })
-  
-  //タスク状態管理用チェックボックス
-  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
 
-  //タスクの状態管理(切り替え)
-  radioBtns.forEach( (el,i) => {
-    el.addEventListener('click',function(){
-      todoTasks[i].status = !todoTasks[i].status
-    })
-  })
+  //状態管理
+  changeStatus();
 
 }
 
@@ -183,24 +183,20 @@ function incompleteTasks() {
     displayPlace.appendChild(li);
   })
 
-  //タスク状態管理用チェックボックス
-  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
+  //状態管理
+  changeStatus();
 
-  //タスクの状態管理(切り替え)
-  radioBtns.forEach( (el,i) => {
-    el.addEventListener('click',function(){
-      todoTasks[i].status = !todoTasks[i].status
-    })
-  })
 }
 
 function completeTasks() {
 
-  const incompleteTasks = todoTasks.filter( el => el.status === true)
+  const completeTasks = todoTasks.filter( el => el.status === true)
+
+  console.log(completeTasks)
 
   displayPlace.textContent = null;
 
-  incompleteTasks.forEach( (el) => {
+  completeTasks.forEach( (el) => {
 
     let li = document.createElement('li');
     li.className = 'task-card _mb-2';
@@ -219,13 +215,7 @@ function completeTasks() {
     displayPlace.appendChild(li);
   })
 
-  //タスク状態管理用チェックボックス
-  let radioBtns = document.querySelectorAll('.checkbox > .label > .input');
+  //状態管理
+  changeStatus();
 
-  //タスクの状態管理(切り替え)
-  radioBtns.forEach( (el,i) => {
-    el.addEventListener('click',function(){
-      todoTasks[i].status = !todoTasks[i].status
-    })
-  })
 }
